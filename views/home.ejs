@@ -145,7 +145,7 @@
                         <th>Short ID</th>
                         <th>Redirect URL</th>
                         <th>Clicks</th>
-                        <% if (role === "ADMIN") { %>
+                        <% if(locals.role === "ADMIN") { %>
                             <th>User Name</th>
                         <% } %>
                     </tr>
@@ -157,7 +157,8 @@
                             <td><%= url.shortId %></td>
                             <td><a href="/url/<%= url.shortId %>" target="_blank"><%= url.redirectURL %></a></td>
                             <td><%= url.visitHistory.length %></td>
-                            <% if (role === "ADMIN") { %>
+                           
+                            <% if(locals.role === "ADMIN") { %>
                                 <td style="text-transform: capitalize; font-weight: bold; color: red;"><%= usersName[index] %></td>
 
                             <% } %>
